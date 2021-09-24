@@ -1,0 +1,5 @@
+*.user
+MathStat.App/bin/
+MathStat.App/obj
+MathStat.Styles/bin/
+MathStat.Styles/obj/

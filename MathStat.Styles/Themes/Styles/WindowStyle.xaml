@@ -1,0 +1,103 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MathStat.Styles"
+                    x:Class="MathStat.Styles.Themes.Styles.WindowStyle"
+                    xmlns:converters="clr-namespace:MathStat.Styles.Converters"
+                    xmlns:controls="clr-namespace:MathStat.Styles.Controls">
+    <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter"/>
+    <ControlTemplate x:Key="MainWindowTemplate"
+                     TargetType="{x:Type controls:CustomTitleBarWindow}">
+        <Border Background="{TemplateBinding Background}"
+                x:Name="RootBorder"
+                BorderBrush="{local:ThemeResource ResourceKey=WindowBorder}"
+                BorderThickness="{local:ThemeResource ResourceKey=WindowBorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <!-- Header -->
+                    <Rectangle Height="30" Fill="{local:ThemeResource ResourceKey=WindowHeaderBackground}"/>
+                    <DockPanel LastChildFill="False">
+                        <Image
+                                Width="16"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                DockPanel.Dock="Left"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon,
+                            Converter={StaticResource ObjectToVisibilityConverter}}"/>
+                        <TextBlock
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            DockPanel.Dock="Left"
+                            Text="Theming application"/>
+                        <Button x:Name="CloseButton"
+                            Margin="4,0,8,0"
+                            DockPanel.Dock="Right"
+                            Content="X"
+                            Click="OnCloseClick"
+                            Style="{DynamicResource WindowButtonStyle}"/>
+                        <Button x:Name="MinimizeButton"
+                                Margin="4,0,0,0"
+                                DockPanel.Dock="Right"
+                                Content="-"
+                                Visibility="{TemplateBinding IsMinimizeButtonVisible}"
+                                Click="OnMinimizeClick"
+                                Style="{DynamicResource WindowButtonStyle}"/>
+                        <Button x:Name="MaximizeRestoreButton"
+                                Margin="4,0,0,0"
+                                DockPanel.Dock="Right"
+                                Content="+"
+                                Visibility="{TemplateBinding IsMaximizeRestoreButtonVisible}"
+                                Click="OnMaximizeRestoreClick"
+                                Style="{DynamicResource WindowButtonStyle}"/>
+                        <Rectangle
+                            Width="1"
+                            Height="16"
+                            Margin="8,0"
+                            VerticalAlignment="Center"
+                            DockPanel.Dock="Right"
+                            Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
+                        <Button x:Name="ThemeButton"
+                                Margin="4,0,0,0"
+                                DockPanel.Dock="Right"
+                                Content="T"
+                                Click="OnThemeClick"
+                                Style="{DynamicResource WindowButtonStyle}"/>
+                        <Rectangle
+                            Width="16"
+                            Height="16"
+                            StrokeThickness="1"
+                            DockPanel.Dock="Right"
+                            Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
+                    </DockPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                </Grid>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <Style
+        x:Key="MainWindowStyle"
+        TargetType="{x:Type Window}">
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+
+
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="30"
+                    GlassFrameThickness="1"
+                    NonClientFrameEdges="None"
+                    ResizeBorderThickness="4"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{StaticResource MainWindowTemplate}" />
+    </Style>
+</ResourceDictionary>
