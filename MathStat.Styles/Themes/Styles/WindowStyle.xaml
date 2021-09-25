@@ -33,22 +33,19 @@
                             Margin="8,0,0,0"
                             VerticalAlignment="Center"
                             DockPanel.Dock="Left"
-                            Text="Theming application"/>
+                            Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
                         <Button x:Name="CloseButton"
-                            Margin="4,0,8,0"
                             DockPanel.Dock="Right"
                             Content="X"
                             Click="OnCloseClick"
                             Style="{DynamicResource WindowButtonStyle}"/>
                         <Button x:Name="MinimizeButton"
-                                Margin="4,0,0,0"
                                 DockPanel.Dock="Right"
                                 Content="-"
                                 Visibility="{TemplateBinding IsMinimizeButtonVisible}"
                                 Click="OnMinimizeClick"
                                 Style="{DynamicResource WindowButtonStyle}"/>
                         <Button x:Name="MaximizeRestoreButton"
-                                Margin="4,0,0,0"
                                 DockPanel.Dock="Right"
                                 Content="+"
                                 Visibility="{TemplateBinding IsMaximizeRestoreButtonVisible}"
@@ -79,6 +76,13 @@
                 </Grid>
             </Grid>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="RootBorder" Property="BorderThickness" Value="8" />
+                <Setter TargetName="RootBorder" Property="BorderBrush" Value="Transparent" />
+                <Setter TargetName="MaximizeRestoreButton" Property="Content" Value="R" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style
         x:Key="MainWindowStyle"
