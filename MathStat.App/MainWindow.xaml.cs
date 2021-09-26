@@ -1,4 +1,5 @@
-﻿using MathStat.Styles;
+﻿using System;
+using MathStat.Styles;
 using MathStat.Styles.Controls;
 using MathStat.Localization;
 namespace MathStat.App
@@ -17,6 +18,12 @@ namespace MathStat.App
         {
             var translation = e == "en"? LanguageId.En : LanguageId.Ru;
             Translation.Load(translation);
+        }
+
+        private void OnThemeChanged(object sender, EventArgs e)
+        {
+            var theme = Theme.ThemeType == ThemeType.Light ? ThemeType.Dark : ThemeType.Light;
+            Theme.LoadThemeType(theme);
         }
     }
 }

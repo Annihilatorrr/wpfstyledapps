@@ -27,11 +27,13 @@ namespace MathStat.Localization
         private static void LoadRuTranslations()
         {
             SetResource(LanguageResourceKey.WindowTitle.ToString(), "Привет, мир");
+            SetResource(LanguageResourceKey.ProductsShipped.ToString(), "Поставка");
         }
 
         private static void LoadEnTranslations()
         {
             SetResource(LanguageResourceKey.WindowTitle.ToString(), "Hello world");
+            SetResource(LanguageResourceKey.ProductsShipped.ToString(), "Products have been shipped");
         }
         public static void Load(LanguageId language)
         {

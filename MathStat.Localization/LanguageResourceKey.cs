@@ -2,6 +2,7 @@
 {
     public enum LanguageResourceKey
     {
+        ProductsShipped,
         WindowTitle
     }
 }

@@ -72,6 +72,7 @@
                             Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
 
                         <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"
+                                  Visibility="{TemplateBinding IsLanguageSwitchComboBoxVisible}"
                                   ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Languages}"
                                   IsEnabled="True" DockPanel.Dock="Right" Width="90" Height="28"
                                   SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Path= SelectedLanguage}">

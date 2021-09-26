@@ -23,7 +23,7 @@ namespace MathStat.Styles.Themes.Styles
         public void OnThemeClick(object sender, RoutedEventArgs e)
         {
             var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
-            window.ThemeClick(window, e);
+            window.RaiseThemeClicked(window, e);
         }
 
         public void OnCloseClick(object sender, RoutedEventArgs e)
