@@ -1,5 +1,6 @@
-﻿using MathStat.Styles.Controls;
-
+﻿using MathStat.Styles;
+using MathStat.Styles.Controls;
+using MathStat.Localization;
 namespace MathStat.App
 {
     /// <summary>
@@ -10,6 +11,12 @@ namespace MathStat.App
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnLanguageChanged(object? sender, string e)
+        {
+            var theme = e == "En"? LanguageId.En : LanguageId.Ru;
+            MathStat.Localization.Language.LoadLanguage(theme);
         }
     }
 }

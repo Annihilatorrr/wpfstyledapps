@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MathStat.Localization\MathStat.Localization.csproj" />
     <ProjectReference Include="..\MathStat.Styles\MathStat.Styles.csproj" />
   </ItemGroup>
 

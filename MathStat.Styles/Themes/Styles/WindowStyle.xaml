@@ -70,9 +70,21 @@
                             StrokeThickness="1"
                             DockPanel.Dock="Right"
                             Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
+
+                        <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"  IsEnabled="True" DockPanel.Dock="Right" Width="150">
+                                <TextBlock>En</TextBlock>
+                                <TextBlock>Ru</TextBlock>
+                        </ComboBox>
                     </DockPanel>
                 </Grid>
                 <Grid Grid.Row="1">
+                    <Border>
+
+                        <AdornerDecorator>
+                            <ContentPresenter/>
+                        </AdornerDecorator>
+                    </Border>
+
                 </Grid>
             </Grid>
         </Border>

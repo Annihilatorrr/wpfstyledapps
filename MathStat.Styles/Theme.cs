@@ -51,10 +51,13 @@ namespace MathStat.Styles
                 new SolidColorBrush(ColorFromHex("#FF607bff")));
             SetResource(ThemeResourceKey.ButtonCornerRadius.ToString(),
                 new SolidColorBrush(ColorFromHex("#FF707bff")));
+
+            SetResource(ThemeResourceKey.WindowTitle.ToString(), "Жопа");
         }
 
         private static void LoadLightTheme()
         {
+            SetResource(ThemeResourceKey.WindowTitle.ToString(), "Jopa");
             SetResource(ThemeResourceKey.ControlDisabledOpacity.ToString(), 1.0d); 
             
             SetResource(ThemeResourceKey.WindowHeaderBackground.ToString(), new SolidColorBrush(ColorFromHex("#2b5329")));

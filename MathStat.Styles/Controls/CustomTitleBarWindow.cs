@@ -5,6 +5,8 @@ namespace MathStat.Styles.Controls
 {
     public class CustomTitleBarWindow : Window
     {
+        public event EventHandler<string> LanguageChanged;
+
         public Visibility IsMinimizeButtonVisible
         {
             get => (Visibility)GetValue(IsMinimizeButtonVisibleProperty);
@@ -20,6 +22,17 @@ namespace MathStat.Styles.Controls
         {
             get => (Visibility)GetValue(IsMaximizeRestoreButtonVisibleProperty);
             set => SetValue(IsMaximizeRestoreButtonVisibleProperty, value);
+        }
+
+        public void ThemeClick(object sender, RoutedEventArgs e)
+        {
+            var theme = Theme.ThemeType == ThemeType.Light ? ThemeType.Dark : ThemeType.Light;
+            Theme.LoadThemeType(theme);
+        }
+
+        public void OnLanguageChanged(string language)
+        {
+            LanguageChanged(this, language);
         }
     }
 }

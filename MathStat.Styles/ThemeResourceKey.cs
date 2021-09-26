@@ -8,6 +8,7 @@ namespace MathStat.Styles
 {
     public enum ThemeResourceKey
     {
+        WindowTitle,
         ButtonControlDefaultBorder,
         ButtonControlFocusBorder,
         ButtonControlFocusBorderThickness,

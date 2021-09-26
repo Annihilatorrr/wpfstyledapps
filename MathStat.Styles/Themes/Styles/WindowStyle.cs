@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using MathStat.Styles.Controls;
 
 namespace MathStat.Styles.Themes.Styles
 {
@@ -16,8 +18,8 @@ namespace MathStat.Styles.Themes.Styles
 
         public void OnThemeClick(object sender, RoutedEventArgs e)
         {
-            var theme = Theme.ThemeType == ThemeType.Light ? ThemeType.Dark : ThemeType.Light;
-            Theme.LoadThemeType(theme);
+            var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
+            window.ThemeClick(window, e);
         }
 
         public void OnCloseClick(object sender, RoutedEventArgs e)
@@ -43,6 +45,13 @@ namespace MathStat.Styles.Themes.Styles
         {
             var window = (Window)((FrameworkElement)sender).TemplatedParent;
             window.WindowState = WindowState.Minimized;
+        }
+
+        public void LanguagesListBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var lbi = ((sender as ComboBox).SelectedItem as TextBlock);
+            var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
+            window.OnLanguageChanged(lbi.Text);
         }
     }
 }
