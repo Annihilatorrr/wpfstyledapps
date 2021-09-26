@@ -1,11 +1,34 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
+using MathStat.Styles.Models;
 
 namespace MathStat.Styles.Controls
 {
     public class CustomTitleBarWindow : Window
     {
+        public CustomTitleBarWindow()
+        {
+            Languages = new List<LanguageModel>()
+            {
+                new LanguageModel() {Id="en", LanguageName = "EN", LanguagePicture = "../../Images/en.ico" },
+                new LanguageModel() {Id="ru", LanguageName = "RU", LanguagePicture = "../../Images/ru.ico" }
+            };
+        }
+
         public event EventHandler<string> LanguageChanged;
+
+        public LanguageModel SelectedLanguage { get; set; }
+
+        public static readonly DependencyProperty LanguagesProperty =
+            DependencyProperty.Register("Languages", typeof(List<LanguageModel>), typeof(CustomTitleBarWindow), new PropertyMetadata(null));
+
+        public List<LanguageModel> Languages
+        {
+            get => (List<LanguageModel>)GetValue(LanguagesProperty);
+            set => SetValue(LanguagesProperty, value);
+        }
 
         public Visibility IsMinimizeButtonVisible
         {
@@ -30,9 +53,9 @@ namespace MathStat.Styles.Controls
             Theme.LoadThemeType(theme);
         }
 
-        public void OnLanguageChanged(string language)
+        public void RaiseLanguageChanged()
         {
-            LanguageChanged(this, language);
+            LanguageChanged?.Invoke(this, SelectedLanguage.Id);
         }
     }
 }

@@ -71,9 +71,22 @@
                             DockPanel.Dock="Right"
                             Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
 
-                        <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"  IsEnabled="True" DockPanel.Dock="Right" Width="150">
-                                <TextBlock>En</TextBlock>
-                                <TextBlock>Ru</TextBlock>
+                        <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"
+                                  ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Languages}"
+                                  IsEnabled="True" DockPanel.Dock="Right" Width="90" Height="28"
+                                  SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Path= SelectedLanguage}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
+                                        <TextBlock FontSize="24" VerticalAlignment="Center" Text="{Binding LanguageName}" Margin="0 0 4 0"></TextBlock>
+                                        <Image Height="24" Width="24">
+                                            <Image.Source>
+                                                <BitmapImage  UriSource="{Binding LanguagePicture}" />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </DockPanel>
                 </Grid>

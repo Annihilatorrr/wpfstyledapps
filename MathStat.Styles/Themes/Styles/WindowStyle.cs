@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using MathStat.Styles.Controls;
+using MathStat.Styles.Models;
 
 namespace MathStat.Styles.Themes.Styles
 {
     public partial class WindowStyle: ResourceDictionary
     {
+
+
         public WindowStyle()
         {
             //InitializeComponent();
@@ -49,9 +53,8 @@ namespace MathStat.Styles.Themes.Styles
 
         public void LanguagesListBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var lbi = ((sender as ComboBox).SelectedItem as TextBlock);
             var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
-            window.OnLanguageChanged(lbi.Text);
+            window.RaiseLanguageChanged();
         }
     }
 }

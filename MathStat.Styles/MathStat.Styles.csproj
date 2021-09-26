@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\en.ico" />
+    <None Remove="Images\en.png" />
+    <None Remove="Images\ru.ico" />
+    <None Remove="Images\ru.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\en.ico" />
+    <Resource Include="Images\en.png" />
+    <Resource Include="Images\ru.ico" />
+    <Resource Include="Images\ru.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Themes\Styles\ButtonStyles.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
