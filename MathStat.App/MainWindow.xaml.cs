@@ -15,8 +15,8 @@ namespace MathStat.App
 
         private void OnLanguageChanged(object? sender, string e)
         {
-            var theme = e == "En"? LanguageId.En : LanguageId.Ru;
-            MathStat.Localization.Language.LoadLanguage(theme);
+            var translation = e == "En"? LanguageId.En : LanguageId.Ru;
+            Translation.Load(translation);
         }
     }
 }

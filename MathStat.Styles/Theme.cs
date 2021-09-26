@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Media;
-using Color = System.Drawing.Color;
-using ColorConverter = System.Drawing.ColorConverter;
 
 namespace MathStat.Styles
 {

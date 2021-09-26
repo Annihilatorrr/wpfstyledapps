@@ -6,7 +6,7 @@ namespace MathStat.Localization
     {
         public LanguageResourceDictionary()
         {
-            MergedDictionaries.Add(Language.ResourceDictionary);
+            MergedDictionaries.Add(Translation.ResourceDictionary);
         }
     }
 }
