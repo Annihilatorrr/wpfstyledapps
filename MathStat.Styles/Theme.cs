@@ -47,8 +47,6 @@ namespace MathStat.Styles
                 new SolidColorBrush(ColorFromHex("#FF607bff")));
             SetResource(ThemeResourceKey.ButtonCornerRadius.ToString(),
                 new SolidColorBrush(ColorFromHex("#FF707bff")));
-
-            SetResource(ThemeResourceKey.WindowTitle.ToString(), "Жопа");
         }
 
         private static void LoadLightTheme()
