@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
@@ -14,7 +10,11 @@ namespace MathStat.Styles
         public object Convert(
             object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return new BitmapImage(new Uri(value.ToString(), UriKind.Relative));
+            if (value != null)
+            {
+                return new BitmapImage(new Uri(value.ToString(), UriKind.Relative));
+            }
+            throw new ArgumentException("ImageConverter value must be set");
         }
 
         public object ConvertBack(

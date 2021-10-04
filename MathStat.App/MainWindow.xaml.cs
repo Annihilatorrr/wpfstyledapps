@@ -1,17 +1,16 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Linq;
 using System.Windows;
 using MathStat.Styles;
-using MathStat.Styles.Controls;
 using MathStat.Localization;
-using MathStat.Styles.Models;
 
 namespace MathStat.App
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : CustomTitleBarWindow
+    public partial class MainWindow
     {
         public MainWindow()
         {

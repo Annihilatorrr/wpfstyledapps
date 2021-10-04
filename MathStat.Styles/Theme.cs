@@ -28,7 +28,7 @@ namespace MathStat.Styles
         private static void LoadDarkTheme()
         {
             SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFFF0000")));
-            SetResource(ThemeResourceKey.WindowBorderThickness.ToString(), new System.Windows.Thickness(1));
+            SetResource(ThemeResourceKey.WindowBorderThickness.ToString(), new Thickness(1));
 
             SetResource(ThemeResourceKey.ButtonControlDefaultBorder.ToString(),
                 new SolidColorBrush(ColorFromHex("#FF007bff")));
@@ -296,7 +296,7 @@ namespace MathStat.Styles
             ResourceDictionary[key] = resource;
         }
 
-        internal static System.Windows.Media.Color ColorFromHex(string hex)
+        internal static Color ColorFromHex(string hex)
         {
             //remove the # at the front
             hex = hex.Replace("#", "");
@@ -320,7 +320,7 @@ namespace MathStat.Styles
             g = byte.Parse(hex.Substring(start + 2, 2), System.Globalization.NumberStyles.HexNumber);
             b = byte.Parse(hex.Substring(start + 4, 2), System.Globalization.NumberStyles.HexNumber);
 
-            return System.Windows.Media.Color.FromArgb(a, r, g, b);
+            return Color.FromArgb(a, r, g, b);
         }
     }
 }
