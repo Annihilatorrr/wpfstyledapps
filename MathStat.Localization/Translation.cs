@@ -17,7 +17,6 @@ namespace MathStat.Localization
                     return _resourceDictionary;
                 }
                 _resourceDictionary = new ResourceDictionary();
-                Load(LanguageId.En);
                 return _resourceDictionary;
             }
         }

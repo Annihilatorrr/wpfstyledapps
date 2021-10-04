@@ -13,8 +13,8 @@ namespace MathStat.Styles.Controls
         {
             Languages = new List<LanguageModel>()
             {
-                new() {Id="en", LanguageName = "EN", LanguagePicture = "../../Images/en.ico" },
-                new() {Id="ru", LanguageName = "RU", LanguagePicture = "../../Images/ru.ico" }
+                new() {Id="ru", LanguageName = "RU", LanguagePicture = "../../Images/ru.ico" },
+                new() {Id="en", LanguageName = "EN", LanguagePicture = "../../Images/en.ico" }
             };
             SelectedLanguage = Languages.First();
         }
@@ -22,7 +22,15 @@ namespace MathStat.Styles.Controls
         public event EventHandler<string> LanguageChanged;
         public event EventHandler ThemeClicked;
 
-        public LanguageModel SelectedLanguage { get; set; }
+
+        public static readonly DependencyProperty SelectedLanguageProperty =
+            DependencyProperty.Register("SelectedLanguage", typeof(LanguageModel), typeof(CustomTitleBarWindow), new PropertyMetadata(null));
+
+        public LanguageModel SelectedLanguage
+        {
+            get => (LanguageModel)GetValue(SelectedLanguageProperty);
+            set => SetValue(SelectedLanguageProperty, value);
+        }
 
         #region Dependency properties
 
@@ -43,6 +51,15 @@ namespace MathStat.Styles.Controls
             set => SetValue(IsMinimizeButtonVisibleProperty, value);
         }
 
+        public static readonly DependencyProperty ThemeSelectorToolTipProperty =
+            DependencyProperty.Register("ThemeSelectorToolTip", typeof(string), typeof(CustomTitleBarWindow), new PropertyMetadata(null));
+        public string ThemeSelectorToolTip
+        {
+            get => (string)GetValue(ThemeSelectorToolTipProperty);
+            set => SetValue(ThemeSelectorToolTipProperty, value);
+        }
+
+        
         public static readonly DependencyProperty IsMaximizeRestoreButtonVisibleProperty =
             DependencyProperty.Register("IsMaximizeRestoreButtonVisible", typeof(Visibility), typeof(CustomTitleBarWindow), new PropertyMetadata(null));
         public Visibility IsMaximizeRestoreButtonVisible

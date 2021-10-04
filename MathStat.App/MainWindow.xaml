@@ -10,7 +10,10 @@
                               mc:Ignorable="d"
                               Title="{localization:LanguageResource ResourceKey=WindowTitle}" Height="450" Width="800"
                               LanguageChanged="OnLanguageChanged"
-                              ThemeClicked="OnThemeChanged">
+                                Loaded="MainWindow_OnLoaded"
+                              ThemeClicked="OnThemeChanged"
+                                ThemeSelectorToolTip="{localization:LanguageResource ResourceKey=WindowTitle}"
+                                Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -24,7 +27,8 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock FontSize="20" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Row="0" Text="{localization:LanguageResource ResourceKey=ProductsShipped}"></TextBlock>
-        <ComboBox  Width="150" Grid.Row="1">
+        <ComboBox  Width="150" Grid.Row="1"
+                   Grid.Column="0">
             <ComboBoxItem IsSelected="True">
                 <TextBlock>En</TextBlock>
             </ComboBoxItem>
@@ -32,5 +36,12 @@
                 <TextBlock>Ru</TextBlock>
             </ComboBoxItem>
         </ComboBox>
+        <!--<ToggleButton
+            Grid.Column="0"
+            Content="C"
+                      Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                      ToolTip="Default ToggleButton Style"
+                      Grid.Row="2"/>-->
+
     </Grid>
 </controls:CustomTitleBarWindow>
