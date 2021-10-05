@@ -5,3 +5,6 @@ MathStat.Styles/bin/
 MathStat.Styles/obj/
 MathStat.Localization/bin/
 MathStat.Localization/obj/
+MathStat.Infrastructure/obj/
+MathStat.Infrastructure/bin/
+.vs/

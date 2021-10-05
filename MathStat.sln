@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathStat.App", "MathStat.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathStat.Styles", "MathStat.Styles\MathStat.Styles.csproj", "{1FD31443-240A-4E6F-BBBF-105DBFF2DE23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathStat.Localization", "MathStat.Localization\MathStat.Localization.csproj", "{6D7622D6-DB72-4DD9-83E0-A039409D0A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathStat.Localization", "MathStat.Localization\MathStat.Localization.csproj", "{6D7622D6-DB72-4DD9-83E0-A039409D0A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathStat.Infrastructure", "MathStat.Infrastructure\MathStat.Infrastructure.csproj", "{AC5ADC28-E56C-4D63-B51C-999E3452F423}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{6D7622D6-DB72-4DD9-83E0-A039409D0A0D}.Release|x64.Build.0 = Release|Any CPU
 		{6D7622D6-DB72-4DD9-83E0-A039409D0A0D}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D7622D6-DB72-4DD9-83E0-A039409D0A0D}.Release|x86.Build.0 = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|x64.Build.0 = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|x64.ActiveCfg = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|x64.Build.0 = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC5ADC28-E56C-4D63-B51C-999E3452F423}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

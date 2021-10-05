@@ -5,6 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <styles:ThemeResourceDictionary/>
         <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="Styles/ListBoxItemContainerStyle.xaml"/>
         <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

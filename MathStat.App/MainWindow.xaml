@@ -28,7 +28,16 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock FontSize="20" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Row="0" Text="{localization:LanguageResource ResourceKey=ProductsShipped}"></TextBlock>
+        <ListBox ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle}" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Row="0" ItemsSource="{Binding Sections}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <!-- Others -->
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <ComboBox  Width="150" Grid.Row="1"
                    Grid.Column="0">
             <ComboBoxItem IsSelected="True">

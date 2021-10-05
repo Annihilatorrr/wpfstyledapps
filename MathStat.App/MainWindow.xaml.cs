@@ -2,8 +2,10 @@
 using System;
 using System.Linq;
 using System.Windows;
+using MathStat.App.ViewModels;
 using MathStat.Styles;
 using MathStat.Localization;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MathStat.App
 {
@@ -15,6 +17,7 @@ namespace MathStat.App
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = App.Current.Services.GetService<MainViewModel>();
         }
 
         private void OnLanguageChanged(object? sender, string e)
