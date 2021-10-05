@@ -28,11 +28,13 @@ namespace MathStat.App
             var translation = LanguageId.Ru;
             SelectedLanguage = Languages.First(l => l.Id == translation.ToString().ToLower());
             Translation.Load(translation);
+            SelectedTheme = "light";
+            Theme.LoadThemeType(ThemeType.Light);
         }
 
         private void OnThemeChanged(object? sender, string e)
         {
-            var theme = Theme.ThemeType == ThemeType.Light ? ThemeType.Dark : ThemeType.Light;
+            var theme = e == "dark" ? ThemeType.Dark : ThemeType.Light;
             Theme.LoadThemeType(theme);
         }
     }

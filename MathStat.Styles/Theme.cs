@@ -27,7 +27,7 @@ namespace MathStat.Styles
 
         private static void LoadDarkTheme()
         {
-            SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFFF0000")));
+            SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFFF00FF")));
             SetResource(ThemeResourceKey.WindowBorderThickness.ToString(), new Thickness(1));
 
             SetResource(ThemeResourceKey.ButtonControlDefaultBorder.ToString(),

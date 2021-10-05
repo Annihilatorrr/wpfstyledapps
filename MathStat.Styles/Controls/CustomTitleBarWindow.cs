@@ -16,6 +16,7 @@ namespace MathStat.Styles.Controls
                 new() {Id="en", LanguageName = "EN", LanguagePicture = "../../Images/en.ico" }
             };
             SelectedLanguage = Languages.First();
+            SelectedTheme = "light";
         }
 
         public event EventHandler<string> LanguageChanged;
@@ -29,6 +30,15 @@ namespace MathStat.Styles.Controls
         {
             get => (LanguageModel)GetValue(SelectedLanguageProperty);
             set => SetValue(SelectedLanguageProperty, value);
+        }
+
+        public static readonly DependencyProperty SelectedThemeProperty =
+            DependencyProperty.Register("SelectedTheme", typeof(string), typeof(CustomTitleBarWindow), new PropertyMetadata(null));
+
+        public string SelectedTheme
+        {
+            get => (string)GetValue(SelectedThemeProperty);
+            set => SetValue(SelectedThemeProperty, value);
         }
 
         #region Dependency properties

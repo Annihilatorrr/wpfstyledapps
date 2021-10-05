@@ -5,6 +5,7 @@
                     xmlns:converters="clr-namespace:MathStat.Styles.Converters"
                     xmlns:controls="clr-namespace:MathStat.Styles.Controls">
     <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter"/>
+    <converters:ThemeToBoolConverter x:Key="ThemeToBoolConverter"/>
     <ControlTemplate x:Key="MainWindowTemplate"
                      TargetType="{x:Type controls:CustomTitleBarWindow}">
         <Border Background="{TemplateBinding Background}"
@@ -60,7 +61,7 @@
                             Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
 
                         <controls:ImageToggleButton
-                            IsChecked="False"
+                            IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path= SelectedTheme, Mode=TwoWay, Converter={StaticResource ThemeToBoolConverter}}"
                             IsEnabled="True"
                             ThemeClicked="ImageToggleButton_OnThemeClicked"
                             Height="28"
