@@ -2,7 +2,6 @@
 {
     public enum ThemeResourceKey
     {
-        WindowTitle,
         ButtonControlDefaultBorder,
         ButtonControlFocusBorder,
         ButtonControlFocusBorderThickness,
@@ -21,6 +20,8 @@
         HeaderButtonControlOpacity,
         ///
         WindowBorder,
+        WindowBackground,
+        WindowForeground,
         WindowBorderThickness,
         WindowHeaderBackground,
         WindowHeaderForeground,

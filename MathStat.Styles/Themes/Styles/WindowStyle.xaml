@@ -76,12 +76,12 @@
                         <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"
                                   Visibility="{TemplateBinding IsLanguageSwitchComboBoxVisible}"
                                   ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Languages}"
-                                  IsEnabled="True" DockPanel.Dock="Right" Width="90" Height="28"
+                                  IsEnabled="True" DockPanel.Dock="Right" Width="85" Height="28"
                                   SelectedItem="{Binding RelativeSource={RelativeSource TemplatedParent}, Path= SelectedLanguage}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
-                                        <TextBlock FontSize="24" VerticalAlignment="Center" Text="{Binding LanguageName}" Margin="0 0 4 0"></TextBlock>
+                                        <TextBlock FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Text="{Binding LanguageName}" Margin="0 2 4 2"></TextBlock>
                                         <Image Height="24" Width="24" Source="{Binding LanguagePicture}" />
                                     </StackPanel>
                                 </DataTemplate>
@@ -91,7 +91,6 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Border>
-
                         <AdornerDecorator>
                             <ContentPresenter/>
                         </AdornerDecorator>

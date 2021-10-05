@@ -47,6 +47,11 @@ namespace MathStat.Styles
                 new SolidColorBrush(ColorFromHex("#FF607bff")));
             SetResource(ThemeResourceKey.ButtonCornerRadius.ToString(),
                 new SolidColorBrush(ColorFromHex("#FF707bff")));
+            SetResource(ThemeResourceKey.WindowBackground.ToString(),
+                new SolidColorBrush(ColorFromHex("#FF000000")));
+            SetResource(ThemeResourceKey.WindowForeground.ToString(),
+                new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
+
         }
 
         private static void LoadLightTheme()
@@ -83,6 +88,10 @@ namespace MathStat.Styles
                 new SolidColorBrush(ColorFromHex("#FF607b11")));
             SetResource(ThemeResourceKey.ButtonCornerRadius.ToString(),
                 new CornerRadius(0));
+            SetResource(ThemeResourceKey.WindowBackground.ToString(),
+                new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
+            SetResource(ThemeResourceKey.WindowForeground.ToString(),
+                new SolidColorBrush(ColorFromHex("#FF000000")));
             //SetResource(ThemeResourceKey.ContentBackground.ToString(),
             //                new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
 
