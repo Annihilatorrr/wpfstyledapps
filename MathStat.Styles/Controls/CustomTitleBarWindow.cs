@@ -19,7 +19,7 @@ namespace MathStat.Styles.Controls
         }
 
         public event EventHandler<string> LanguageChanged;
-        public event EventHandler ThemeClicked;
+        public event EventHandler<string> ThemeClicked;
 
 
         public static readonly DependencyProperty SelectedLanguageProperty =
@@ -79,9 +79,9 @@ namespace MathStat.Styles.Controls
 
         #region Methods
 
-        public void RaiseThemeClicked(object sender, RoutedEventArgs e)
+        public void RaiseThemeClicked(object sender, string e)
         {
-            ThemeClicked?.Invoke(this, EventArgs.Empty);
+            ThemeClicked?.Invoke(this, e);
         }
 
         public void RaiseLanguageChanged()

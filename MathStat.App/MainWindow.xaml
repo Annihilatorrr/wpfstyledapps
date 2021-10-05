@@ -10,8 +10,8 @@
                               mc:Ignorable="d"
                               Title="{localization:LanguageResource ResourceKey=WindowTitle}" Height="450" Width="800"
                               LanguageChanged="OnLanguageChanged"
+                                ThemeClicked="OnThemeChanged"
                                 Loaded="MainWindow_OnLoaded"
-                              ThemeClicked="OnThemeChanged"
                                 ThemeSelectorToolTip="{localization:LanguageResource ResourceKey=WindowTitle}"
                                 Background="White">
     <Grid>

@@ -58,19 +58,20 @@
                             VerticalAlignment="Center"
                             DockPanel.Dock="Right"
                             Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
-                        <Button x:Name="ThemeButton"
-                                Margin="4,0,0,0"
-                                DockPanel.Dock="Right"
-                                Content="T"
-                                Click="OnThemeClick"
-                                Style="{DynamicResource WindowButtonStyle}"/>
-                        <Rectangle
-                            Width="16"
-                            Height="16"
-                            StrokeThickness="1"
-                            DockPanel.Dock="Right"
-                            Fill="{local:ThemeResource ResourceKey=WindowHeaderForeground}"/>
 
+                        <controls:ImageToggleButton
+                            IsChecked="False"
+                            IsEnabled="True"
+                            ThemeClicked="ImageToggleButton_OnThemeClicked"
+                            Height="28"
+                            Width="28"
+                            ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path= ThemeSelectorToolTip}"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
+                            DockPanel.Dock="Right"
+                            EnabledCheckedIcon="../../Images/dark_theme.png"
+                            EnabledUncheckedIcon="../../Images/light_theme.png"
+                            DisabledUncheckedIcon="../../Images/light_theme.png"/>
+                        
                         <ComboBox SelectionChanged="LanguagesListBoxSelectionChanged" WindowChrome.IsHitTestVisibleInChrome="True"
                                   Visibility="{TemplateBinding IsLanguageSwitchComboBoxVisible}"
                                   ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Languages}"
@@ -80,11 +81,7 @@
                                 <DataTemplate>
                                     <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
                                         <TextBlock FontSize="24" VerticalAlignment="Center" Text="{Binding LanguageName}" Margin="0 0 4 0"></TextBlock>
-                                        <Image Height="24" Width="24">
-                                            <Image.Source>
-                                                <BitmapImage  UriSource="{Binding LanguagePicture}" />
-                                            </Image.Source>
-                                        </Image>
+                                        <Image Height="24" Width="24" Source="{Binding LanguagePicture}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>

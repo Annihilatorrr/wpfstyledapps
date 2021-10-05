@@ -51,7 +51,6 @@ namespace MathStat.Styles
 
         private static void LoadLightTheme()
         {
-            SetResource(ThemeResourceKey.WindowTitle.ToString(), "Jopa");
             SetResource(ThemeResourceKey.ControlDisabledOpacity.ToString(), 1.0d); 
             
             SetResource(ThemeResourceKey.WindowHeaderBackground.ToString(), new SolidColorBrush(ColorFromHex("#2b5329")));

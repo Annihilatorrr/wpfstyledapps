@@ -12,13 +12,7 @@ namespace MathStat.Styles.Themes.Styles
         {
             //InitializeComponent();
         }
-
-        public void OnThemeClick(object sender, RoutedEventArgs e)
-        {
-            var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
-            window.RaiseThemeClicked(window, e);
-        }
-
+        
         public void OnCloseClick(object sender, RoutedEventArgs e)
         {
             var window = (Window)((FrameworkElement)sender).TemplatedParent;
@@ -48,6 +42,17 @@ namespace MathStat.Styles.Themes.Styles
         {
             var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
             window.RaiseLanguageChanged();
+        }
+
+        //private void OnThemeClick(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+        private void ImageToggleButton_OnThemeClicked(object? sender, string e)
+        {
+            //this.
+            var window = (CustomTitleBarWindow)((FrameworkElement)sender).TemplatedParent;
+            window.RaiseThemeClicked(window, e);
         }
     }
 }

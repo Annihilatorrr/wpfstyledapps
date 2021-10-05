@@ -6,15 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\dark_theme.png" />
     <None Remove="Images\en.ico" />
     <None Remove="Images\en.png" />
+    <None Remove="Images\light_theme.png" />
     <None Remove="Images\ru.ico" />
     <None Remove="Images\ru.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\dark_theme.png" />
     <Resource Include="Images\en.ico" />
     <Resource Include="Images\en.png" />
+    <Resource Include="Images\light_theme.png" />
     <Resource Include="Images\ru.ico" />
     <Resource Include="Images\ru.png" />
   </ItemGroup>
